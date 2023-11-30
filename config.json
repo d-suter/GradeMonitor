@@ -1,0 +1,6 @@
+{
+    "otp_secret": "otp sectret without any spaces",
+    "discord_webhook_url": "https://discord.com/api/webhooks/...",
+    "username": "username",
+    "password": "password"
+  }
