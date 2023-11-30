@@ -11,7 +11,7 @@ This app checks for new grades posted on the gibz grade website and sends notifi
    ```
 4. Update the `config.json` file with your credentials, Discord webhook URL, and other configuration details.
 > [!IMPORTANT]
-> The OTP code cannot contain spaces. Just delete any spaces
+> The `otp_secret` cannot contain spaces. Just delete any spaces
 
 5. Run the main script to start checking for grades:
    ```
