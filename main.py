@@ -68,10 +68,8 @@ try:
 
         page_source = driver.page_source
 
-        logging.info("Parsing grades from the page source.")
         new_grades = parse_grades(page_source)
         if new_grades:
-            logging.info(f"New grades found: {new_grades}")
             send_discord_message(config['discord_webhook_url'], new_grades)
         else:
             logging.info("No new grades found.")

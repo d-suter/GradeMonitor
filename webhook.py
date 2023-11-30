@@ -1,5 +1,6 @@
 import requests
 import json
+import logging
 
 def load_sent_grades():
     try:
@@ -31,7 +32,7 @@ def send_discord_message(webhook_url, new_grades):
             }
             embeds.append(embed)
             sent_grades.add(grade_id)
-            print("Sent Webhook")
+            logging.info("Sent webhook")
 
     if embeds:
         data = {
