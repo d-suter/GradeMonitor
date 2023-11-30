@@ -32,7 +32,7 @@ def send_discord_message(webhook_url, new_grades):
             }
             embeds.append(embed)
             sent_grades.add(grade_id)
-            logging.info("Sent webhook")
+            logging.info("New Grade found. Successfully sent the Webhook")
 
     if embeds:
         data = {
