@@ -22,7 +22,7 @@ def send_discord_message(webhook_url, new_grades):
         if grade_id not in sent_grades:
             embed = {
                 "title": "Neue Note!",
-                "description": f"Fach: `{grade[0]}`\nNote: `{grade[1]}`\nDatum: `{grade[2]}`\nNote `{grade[3]}`",
+                "description": f"Fach: `{grade[0]}`\nTest: `{grade[1]}`\nDatum: `{grade[2]}`\nNote `{grade[3]}`",
                 "color": 3224376,
                 "author": {
                     "name": "Grade-Monitor",
