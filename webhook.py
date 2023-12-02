@@ -1,6 +1,7 @@
 import requests
 import json
 import logging
+from datetime import datetime
 
 def load_sent_grades():
     try:
@@ -17,12 +18,14 @@ def send_discord_message(webhook_url, new_grades):
     sent_grades = load_sent_grades()
     embeds = []
 
+    current_timestamp = int(datetime.now().timestamp())
+
     for grade in new_grades:
         grade_id = '-'.join(grade)
         if grade_id not in sent_grades:
             embed = {
                 "title": "Neue Note!",
-                "description": f"Fach: `{grade[0]}`\nTest: `{grade[1]}`\nDatum: `{grade[2]}`\nNote `{grade[3]}`",
+                "description": f"Fach: `{grade[0]}`\nTest: `{grade[1]}`\nDatum: `{grade[2]}`\nNote `{grade[3]}`\nTime: <t:{current_timestamp}>",
                 "color": 3224376,
                 "author": {
                     "name": "Grade-Monitor",
