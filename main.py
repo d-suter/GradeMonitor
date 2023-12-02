@@ -28,23 +28,23 @@ driver = webdriver.Chrome(service=service, options=chrome_options)
 def perform_login():
     logging.info("Opening login page.")
     driver.get('https://gibz.zg.ch/login/sls/auth?cmd=auth-t')
-    time.sleep(2)
+    time.sleep(1)
 
     logging.info("Entering username.")
     username_input = driver.find_element(By.NAME, 'userid')
     username_input.send_keys(config['username'])
-    time.sleep(2)
+    time.sleep(1)
 
     logging.info("Entering password.")
     password_input = driver.find_element(By.NAME, 'password')
     password_input.send_keys(config['password'])
-    time.sleep(2)
+    time.sleep(1)
 
     logging.info("Submitting the login form.")
     login_button = driver.find_element(By.CSS_SELECTOR, 'button.btn.btn-primary')
     login_button.click()
 
-    time.sleep(5)
+    time.sleep(2)
 
     otp_code = generate_otp(config['otp_secret'])
     logging.info(f"Generated OTP: {otp_code}")
@@ -55,7 +55,7 @@ def perform_login():
     otp_button = driver.find_element(By.CSS_SELECTOR, 'button.btn.btn-primary')
     otp_button.click()
 
-    time.sleep(5)
+    time.sleep(2)
 
 perform_login()
 
