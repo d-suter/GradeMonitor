@@ -36,7 +36,7 @@ def send_discord_message(webhook_url, new_grades):
 
     if embeds:
         data = {
-            "content": None,
+            "content": "@everyone",
             "embeds": embeds,
             "username": "Grade Monitor",
             "avatar_url": "https://avatars.githubusercontent.com/u/93440331?s=400&u=a05cbca990d5ecce2a4be5de46181b8bebf8291f&v=4"
